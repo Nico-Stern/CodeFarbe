@@ -5,11 +5,26 @@ using UnityEngine;
 public class Rot : MonoBehaviour
 {
     public Farbewert FWert;
+    public int RWert = 1;
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    
+  
+    public void Update()
     {
-        gameObject.SetActive(false);
-        FWert.Farbe += 1;
+
+        if(FWert.Farbe>= RWert)
+        {
+            gameObject.SetActive(false);
+        }
+        if(FWert.Farbe < 1)
+        {
+            gameObject.SetActive(true);
+        }
+    }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        FWert.Farbe += RWert;
+        FWert.RFarbe += RWert;
     }
 }
 

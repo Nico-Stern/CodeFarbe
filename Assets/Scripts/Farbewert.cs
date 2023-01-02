@@ -4,53 +4,65 @@ using UnityEngine;
 
 public class Farbewert : MonoBehaviour
 {
+    public Weiﬂ Weiﬂ;
     public Rot Rot;
     public Blau Blau;
     public Gelb Gelb;
     public int Farbe = 0;
+    public int RFarbe;
+    public int BFarbe;
+    public int GFarbe;
+    public int WFarbe;
+    private Renderer rend;
+    private Color FColor = Color.white;
+    private Color Lila = new Color(0.5f, 0.2f, 0.8f, 0.6f);
+    private Color Orange = new Color(0.9f, 0.4f, 0.2f);
+
+    private void Start()
+    {
+        rend = GetComponent<Renderer>();
+    }
 
     public void Update()
     {
-        switch(Farbe)
+        rend.material.color = FColor;
+        switch (Farbe)
         {
-            case 1:
-                print("Rot");
+            case <0:
+                FColor= Color.white;
+                Farbe = 0;
                 break;
+            case 1:
+                FColor = Color.red;            
+                    break;
 
             case 2:
-                print("Blau");
+                FColor = Color.blue;
                 break;
 
             case 3:
-                print("lila");
+                FColor = Lila;
                 break;
 
             case 4:
-                print("Gelb");
+                FColor = Color.yellow;
                 break;
 
             case 5:
-                print("Orange");
+                FColor = Orange;
                 break;
 
             case 6:
-                print("Gr¸n");
+                FColor = Color.green;
                 break;
 
             case 7:
-                print("Schwarz");
+                FColor = Color.black;
                 break;
 
             default:
-                
+                FColor= Color.white;               
                 break;
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (gameObject.CompareTag("Eimer"))
-        {
-
         }
     }
 }
