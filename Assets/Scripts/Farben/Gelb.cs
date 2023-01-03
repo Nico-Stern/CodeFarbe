@@ -10,13 +10,9 @@ public class Gelb : MonoBehaviour
 
     public void Update()
     {
-        if (FWert.Farbe >= GWert)
+        if (FWert.GFarbe >= GWert)
         {
             gameObject.SetActive(false);
-        }
-        if (FWert.Farbe < 4)
-        {
-            gameObject.SetActive(true);
         }
     }
     public void OnCollisionEnter2D(Collision2D collision)

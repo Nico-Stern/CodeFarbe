@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Farbewert : MonoBehaviour
 {
+    public GameObject GRot;
+    public GameObject GBlau;
+    public GameObject GGelb;
+    public GameObject GRot2;
+    public GameObject GBlau2;
+    public GameObject GGelb2;
     public Weiﬂ Weiﬂ;
     public Rot Rot;
     public Blau Blau;
@@ -26,12 +32,23 @@ public class Farbewert : MonoBehaviour
     public void Update()
     {
         rend.material.color = FColor;
-        switch (Farbe)
+        if(Farbe <=0 )
         {
-            case <0:
-                FColor= Color.white;
-                Farbe = 0;
-                break;
+            FColor = Color.white;
+            RFarbe= 0;
+            BFarbe= 0;
+            GFarbe= 0;
+            GRot.SetActive(true);
+            GBlau.SetActive(true);
+            GGelb.SetActive(true);
+            GRot2.SetActive(true);
+            GBlau2.SetActive(true);
+            GGelb2.SetActive(true);
+
+        }
+        switch (Farbe)
+        {  
+                              
             case 1:
                 FColor = Color.red;            
                     break;
@@ -63,6 +80,7 @@ public class Farbewert : MonoBehaviour
             default:
                 FColor= Color.white;               
                 break;
+                
         }
     }
 }

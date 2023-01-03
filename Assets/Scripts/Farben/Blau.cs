@@ -10,13 +10,9 @@ public class Blau : MonoBehaviour
 
     public void Update()
     {
-        if (FWert.Farbe >= BWert)
+        if (FWert.BFarbe >= BWert)
         {
             gameObject.SetActive(false);
-        }
-        if (FWert.Farbe < 2)
-        {
-            gameObject.SetActive(true);
         }
     }
     public void OnCollisionEnter2D(Collision2D collision)

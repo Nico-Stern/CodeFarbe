@@ -6,19 +6,12 @@ public class Rot : MonoBehaviour
 {
     public Farbewert FWert;
     public int RWert = 1;
-
-    
-  
     public void Update()
     {
 
-        if(FWert.Farbe>= RWert)
+        if (FWert.RFarbe >= RWert)
         {
             gameObject.SetActive(false);
-        }
-        if(FWert.Farbe < 1)
-        {
-            gameObject.SetActive(true);
         }
     }
     public void OnCollisionEnter2D(Collision2D collision)
